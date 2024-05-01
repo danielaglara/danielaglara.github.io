@@ -79,5 +79,25 @@
     <footer>
         <p>&copy; 2024 Daniela Garcia-Lara</p>
     </footer>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const dateElement = document.getElementById("current-date");
+            const timeElement = document.getElementById("current-time");
+
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const dateString = now.toLocaleDateString('en-US', options);
+            const timeString = now.toLocaleTimeString('en-US');
+
+            dateElement.textContent = dateString;
+            timeElement.textContent = timeString;
+        }
+
+        // Update date and time every second
+        setInterval(updateDateTime, 1000);
+
+        // Initial call to set date and time when the page loads
+        updateDateTime();
+    </script>
 </body>
 </html>
